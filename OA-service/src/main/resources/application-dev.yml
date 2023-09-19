@@ -1,0 +1,36 @@
+server:
+  port: 8800
+#MP配置
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  #数据库连接
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oa
+    username: root
+    password: 123456
+  #json转换
+  jackson:
+    dateFormat: yyyy-MM-dd HH:mm:ss
+    timeZone: GMT+8
+  #工作流配置
+  activiti:
+    databaseSchema: true
+    dbHistoryUsed: true
+    historyLevel: full
+logging:
+  level:
+    org.springframework.security: debug
+---
+wechat:
+  appID:
+  appsecret:
+  callbackUrl: http://73a61be5.r20.cpolar.top/admin/wechat/userInfo
+  host: http://73a61be5.r20.cpolar.top #管理端映射
+  employeeHost: http://762d92d2.r7.cpolar.top #员工端映射
+  message:
+    pendingApprove: gv2ZXje8ugqtf16cw3GqF9KS5rd7OgzcjHX-UbX-bnk
+    finishedApprove: o0Mr0-TdUBcNRMSgYwlD1ADoGILNjOhq9DxnQ-Q_F8o
